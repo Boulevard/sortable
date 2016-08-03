@@ -1,0 +1,22 @@
+todo-list {
+  display: flex;
+  padding: 8px 0;
+  min-width: 280px;
+  max-width: 320px - 16px;
+  flex-direction: column;
+
+  .item {
+    display: flex;
+    padding: 8px 16px;
+    align-items: center;
+    justify-content: space-between;
+
+    &:nth-child(n + 2) {
+      border-top: 1px @md-dark-divider solid;
+    }
+
+    .material-icons {
+      cursor: move;
+    }
+  }
+}

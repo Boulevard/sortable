@@ -1,8 +1,13 @@
-class TodoList {
+'use strict';
+
+function TodoList() {
 
 }
 
 angular.module('blvd').component('todoList', {
+  bindings: {
+    todos: '='
+  },
   controller: TodoList,
-  template: require('./todoList.html')
+  templateUrl: 'components/todoList/todoList.html',
 });

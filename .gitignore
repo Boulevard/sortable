@@ -1,6 +1,10 @@
 # directories
 bower_components
 node_modules
+build
+
+# files
+app/app.css
 
 # hidden files
 .DS_STORE
