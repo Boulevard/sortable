@@ -1,0 +1,6 @@
+# directories
+bower_components
+node_modules
+
+# hidden files
+.DS_STORE

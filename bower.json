@@ -1,0 +1,35 @@
+{
+  "name": "angular-sortable",
+  "version": "0.0.1",
+  "description": "Drag to reorder elements.",
+  "main": [
+    "dist/sortable.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Boulevard/sortable.git"
+  },
+  "authors": [
+    "Daniel Nagy"
+  ],
+  "homepage": "http://Boulevard.github.io/sortable",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "sort",
+    "sortable",
+    "drag",
+    "reorder"
+  ],
+  "ignore": [
+    "**/.*",
+    "app",
+    "bower_components",
+    "node_modules",
+    "src",
+    "gulpfile.js"
+  ],
+  "dependencies": {
+    "angular": "^1.0.0"
+  }
+}
