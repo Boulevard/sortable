@@ -2,11 +2,20 @@
 
 function App() {
   this.todos = [
-    'Win lottery',
+    'Win the lottery',
     'Go sky diving',
-    'Eat one gallon of icecream'
+    'Eat a gallon of ice cream',
+    'Binge watch Game of Thrones',
+    'Ride a lion',
+    'Date a celebrity',
+    'Build a Rube Goldberg machine',
+    'Solve P = NP',
+    'Create a sentient artifact',
+    'Sleep'
   ];
 }
+
+App.prototype.toJson = angular.toJson;
 
 angular.module('blvd').component('app', {
   controller: App,

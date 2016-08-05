@@ -1,8 +1,29 @@
 app {
   flex: 1 1 auto;
-  padding: 16px;
   display: flex;
-  align-items: center;
-  justify-content: center;
   overflow-x: scroll;
+  align-items: flex-start;
+
+  @media all and (max-width: 1024px) {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .column {
+    flex: 0 0 50%;
+    display: flex;
+    padding: 16px;
+    justify-content: center;
+
+    &:nth-child(2) {
+      pre {
+        flex: 1 1 280px - 32px;
+        margin: 0;
+        padding: 16px;
+        min-width: 280px - 32px;
+        max-width: 480px - 32px;
+        border-radius: 2px;
+      }
+    }
+  }
 }

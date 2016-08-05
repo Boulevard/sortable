@@ -1,1 +1,7 @@
-<todo-list class="card" todos="$ctrl.todos"></todo-list>
+<div class="column">
+  <todo-list class="card" todos="$ctrl.todos"></todo-list>
+</div>
+
+<div class="column">
+  <pre class="hljs" code="{{$ctrl.toJson($ctrl.todos, true)}}" lang="json"></pre>
+</div>

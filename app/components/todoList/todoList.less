@@ -1,22 +1,100 @@
 todo-list {
+  flex: 1 1 280px;
   display: flex;
-  padding: 8px 0;
   min-width: 280px;
-  max-width: 320px - 16px;
+  max-width: 480px;
   flex-direction: column;
+
+  .title {
+    padding: 16px 16px 0;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  form {
+    padding: 16px 16px 24px;
+    display: flex;
+    align-items: flex-end;
+
+    .input-container {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    button {
+      width: 56px;
+      margin-left: 16px;
+    }
+  }
 
   .item {
     display: flex;
     padding: 8px 16px;
+    transition: box-shadow 0.2s ease-in-out;
     align-items: center;
     justify-content: space-between;
+    background-color: #fff;
 
     &:nth-child(n + 2) {
-      border-top: 1px @md-dark-divider solid;
+      box-shadow: 0 1px 0 @md-dark-divider inset;
     }
 
-    .material-icons {
-      cursor: move;
+    &.dragging {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 19%), 0 6px 6px rgba(0, 0, 0, 23%);
+    }
+
+    &:first-child.dragging + .item,
+    &:first-child.dragging + .drop-zone {
+      box-shadow: none;
+    }
+
+    .label {
+      display: flex;
+      overflow: hidden;
+
+      div:first-child {
+        margin-right: 16px;
+      }
+
+      div:last-child {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      padding-left: 8px;
+
+      .material-icons {
+        margin-left: 8px;
+      }
+
+      .delete {
+        cursor: pointer;
+      }
+
+      .drag {
+        cursor: move;
+      }
+    }
+  }
+
+  .drop-zone {
+    border: 2px @md-dark-divider dashed;
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 2%);
+
+    &:before {
+      color: @md-dark-disabled;
+      content: 'Drop';
+      font-weight: 500;
     }
   }
 }

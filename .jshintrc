@@ -6,6 +6,7 @@
   "es3": true,
   "freeze": true,
   "globals": {
+    "hljs": false,
     "angular": false
   },
   "indent": 2,

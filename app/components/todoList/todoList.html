@@ -1,4 +1,27 @@
-<div class="item" ng-repeat="todo in $ctrl.todos">
-  <div>{{todo}}</div>
-  <i class="material-icons">drag_handle</i>
+<div class="title">Todo List</div>
+
+<form name="$ctrl.form" ng-submit="$ctrl.submit()">
+
+  <div class="input-container">
+    <input name="todo" type="text" placeholder="Add todo" ng-model="$ctrl.todo" required>
+    <div class="error" ng-show="$ctrl.form.todo.$error.unique">Already on your todo list</div>
+  </div>
+
+  <button type="submit" ng-disabled="$ctrl.form.$invalid">Add</button>
+</form>
+
+<div class="items" sortable ng-model="$ctrl.todos">
+  <div class="item" ng-repeat="todo in $ctrl.todos">
+
+    <div class="label" ng-mousedown="$event.stopPropagation()">
+      <div>{{$index + 1}}.</div>
+      <div>{{todo}}</div>
+    </div>
+
+    <div class="actions">
+      <i class="material-icons delete" ng-click="$ctrl.remove(todo)">delete</i>
+      <i class="material-icons drag">drag_handle</i>
+    </div>
+
+  </div>
 </div>
