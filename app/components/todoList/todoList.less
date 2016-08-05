@@ -19,82 +19,79 @@ todo-list {
     .input-container {
       flex: 1 1 auto;
       display: flex;
+      position: relative;
       flex-direction: column;
     }
 
     button {
-      width: 56px;
+      width: 64px;
       margin-left: 16px;
     }
+
+    .error {
+      top: 100%;
+      left: 0;
+      color: @brand-danger;
+      padding: 2px;
+      position: absolute;
+      font-size: 12px;
+    }
   }
 
-  .item {
-    display: flex;
-    padding: 8px 16px;
-    transition: box-shadow 0.2s ease-in-out;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #fff;
+  table {
+    width: 100%;
 
-    &:nth-child(n + 2) {
-      box-shadow: 0 1px 0 @md-dark-divider inset;
-    }
+    tr.item {
+      background-color: #fff;
 
-    &.dragging {
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 19%), 0 6px 6px rgba(0, 0, 0, 23%);
-    }
-
-    &:first-child.dragging + .item,
-    &:first-child.dragging + .drop-zone {
-      box-shadow: none;
-    }
-
-    .label {
-      display: flex;
-      overflow: hidden;
-
-      div:first-child {
-        margin-right: 16px;
+      &:nth-child(n + 2) td {
+        box-shadow: 0 1px 0 @md-dark-divider inset;
       }
-
-      div:last-child {
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+      &.dragging {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 19%), 0 6px 6px rgba(0, 0, 0, 23%);
+      }
+      &.dragging td,
+      &:first-child.dragging + .item td,
+      &:first-child.dragging + .drop-zone td {
+        box-shadow: none;
       }
     }
 
-    .actions {
-      display: flex;
-      align-items: center;
-      padding-left: 8px;
+    tr.drop-zone td {
+      color: @md-dark-secondary;
+      border: 2px @md-dark-divider dashed;
+      text-align: center;
+      font-weight: 400;
+      vertical-align: middle;
+      background-color: rgba(0, 0, 0, 2%);
+    }
 
-      .material-icons {
-        margin-left: 8px;
+    td {
+      padding: 8px 0 8px 16px;
+      font-size: 14px;
+      vertical-align: top;
+
+      &:last-child {
+        padding-right: 16px;
       }
 
-      .delete {
+      &.number {
+        text-align: right;
+      }
+
+      &.number, &.label{
+        padding-top: 12px;
+      }
+
+      &.label {
+        width: 100%;
+      }
+      &.delete i {
         cursor: pointer;
       }
-
-      .drag {
+      &.drag i {
         cursor: move;
       }
-    }
-  }
-
-  .drop-zone {
-    border: 2px @md-dark-divider dashed;
-    display: flex;
-    box-sizing: border-box;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 2%);
-
-    &:before {
-      color: @md-dark-disabled;
-      content: 'Drop';
-      font-weight: 500;
     }
   }
 }

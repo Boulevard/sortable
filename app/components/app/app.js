@@ -15,7 +15,9 @@ function App() {
   ];
 }
 
-App.prototype.toJson = angular.toJson;
+App.prototype.getCode = function () {
+  return '// $ctrl.todos \n\n' + angular.toJson(this.todos, true);
+};
 
 angular.module('blvd').component('app', {
   controller: App,

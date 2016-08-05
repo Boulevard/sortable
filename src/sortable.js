@@ -29,7 +29,7 @@ function Sortable($attrs, $element, $scope) {
   }
 
   if($attrs.sortable === '') {
-    $scope.sortable = true;
+    self.sortable = true;
   }
 
   function childCount() {
@@ -232,14 +232,7 @@ function Sortable($attrs, $element, $scope) {
 
       var children = $element.children();
 
-      children.css({
-        'user-select': 'none',
-        '-ms-user-select': 'none',
-        '-moz-user-select': 'none',
-        '-webkit-user-select': 'none'
-      });
-
-      if($scope.sortable) {
+      if(self.sortable) {
         children.on('mousedown', mouseDown);
       }
     }

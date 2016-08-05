@@ -3,25 +3,25 @@
 <form name="$ctrl.form" ng-submit="$ctrl.submit()">
 
   <div class="input-container">
-    <input name="todo" type="text" placeholder="Add todo" ng-model="$ctrl.todo" required>
+    <input name="todo" type="text" placeholder="Add todo" ng-change="$ctrl.onChange()" ng-model="$ctrl.todo" required>
     <div class="error" ng-show="$ctrl.form.todo.$error.unique">Already on your todo list</div>
   </div>
 
-  <button type="submit" ng-disabled="$ctrl.form.$invalid">Add</button>
+  <button class="primary" type="submit" ng-disabled="$ctrl.form.$invalid">Add</button>
+
 </form>
 
-<div class="items" sortable ng-model="$ctrl.todos">
-  <div class="item" ng-repeat="todo in $ctrl.todos">
-
-    <div class="label" ng-mousedown="$event.stopPropagation()">
-      <div>{{$index + 1}}.</div>
-      <div>{{todo}}</div>
-    </div>
-
-    <div class="actions">
-      <i class="material-icons delete" ng-click="$ctrl.remove(todo)">delete</i>
-      <i class="material-icons drag">drag_handle</i>
-    </div>
-
-  </div>
-</div>
+<table>
+  <tbody class="items" sortable ng-model="$ctrl.todos" options="$ctrl.options">
+    <tr class="item" ng-repeat="todo in $ctrl.todos">
+      <td class="number" ng-mousedown="$ctrl.preventDrag($event)">{{$index + 1}}.</td>
+      <td class="label" ng-mousedown="$ctrl.preventDrag($event)">{{todo}}</td>
+      <td class="delete" ng-mousedown="$ctrl.preventDrag($event)">
+        <i class="material-icons" ng-click="$ctrl.remove(todo)">delete</i>
+      </td>
+      <td class="drag">
+        <i class="material-icons">drag_handle</i>
+      </td>
+    </tr>
+  </tbody>
+</table>

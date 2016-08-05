@@ -1,8 +1,20 @@
 'use strict';
 
 function TodoList() {
-
+  this.options = {
+    dropzone: '<tr><td colspan="4">Drop</td></tr>'
+  };
 }
+
+TodoList.prototype.onChange = function () {
+  // debugger;
+  var item = this.todo.toLowerCase();
+  var isUnique = this.todos.every(function (todo) {
+    return item !== todo.toLowerCase();
+  });
+
+  this.form.todo.$setValidity('unique', isUnique);
+};
 
 TodoList.prototype.remove = function (item) {
   var index = this.todos.indexOf(item);
@@ -13,15 +25,17 @@ TodoList.prototype.remove = function (item) {
 };
 
 TodoList.prototype.submit = function () {
-  if(!this.todo) {
+  if(this.form.$inValid) {
     return;
   }
 
-  this.form.todo.$setValidity('unique', this.todos.indexOf(this.todo) === -1);
-
-  if(this.form.$valid && this.todos.push(this.todo)) {
+  if(this.todos.push(this.todo)) {
     this.todo = '';
   }
+};
+
+TodoList.prototype.preventDrag = function (event) {
+  event.stopPropagation();
 };
 
 angular.module('blvd').component('todoList', {
