@@ -7,8 +7,7 @@ function TodoList() {
 }
 
 TodoList.prototype.onChange = function () {
-  // debugger;
-  var item = this.todo.toLowerCase();
+  var item = this.todo && this.todo.toLowerCase();
   var isUnique = this.todos.every(function (todo) {
     return item !== todo.toLowerCase();
   });

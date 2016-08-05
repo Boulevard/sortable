@@ -70,6 +70,14 @@ input {
 
   &:focus {
     box-shadow: 0 2px 0 @brand-primary;
+
+    &.ng-dirty.ng-invalid {
+      box-shadow: 0 2px 0 @brand-danger;
+    }
+  }
+
+  &.ng-dirty.ng-invalid {
+    box-shadow: 0 1px 0 @brand-danger;
   }
 
   &::placeholder {
