@@ -1,5 +1,0 @@
-{
-  "es3": false,
-  "extends": "../.jshintrc",
-  "esversion": 6
-}
