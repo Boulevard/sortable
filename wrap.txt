@@ -1,0 +1,10 @@
+/*
+ * Sortable
+ * <%= repository.url %>
+ * @license <%= license %>
+ * v<%= version %>
+ */
+
+(function (window, angular, undefined) {
+<%= contents %>
+})(window, angular);
