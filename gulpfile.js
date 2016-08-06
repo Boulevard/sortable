@@ -116,7 +116,7 @@ gulp.task('uglify', function () {
   return merge(javaScriptStream, templateStream)
     .pipe(plugins.concat('app.min.js'))
     .pipe(plugins.uglify())
-    .pipe(plugins.replace(/(?!^)('|")use strict\1;/, ''))
+    .pipe(plugins.replace(/(?!^)('|")use strict\1;|('|")ngInject\2;/g, ''))
     .pipe(gulp.dest('build'));
 });
 

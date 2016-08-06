@@ -7,7 +7,8 @@ function touchDirective(touchEvent) {
 
   var directiveName = 'ng' + touchEvent.charAt(0).toUpperCase() + touchEvent.substr(1);
 
-  angular.module('blvd').directive(directiveName, function($parse) {
+  angular.module('blvd').directive(directiveName, function ($parse) {
+    'ngInject';
 
     function compile(tElement, tAttrs) {
       var fn = $parse(tAttrs[directiveName], null, true);

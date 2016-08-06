@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('blvd').directive('replaceWith', function ($http, $templateCache, $compile) {
+  'ngInject';
 
   function postLink(scope, element, attrs) {
     $http.get(scope.$eval(attrs.replaceWith), {cache: $templateCache}).success(function (template) {
