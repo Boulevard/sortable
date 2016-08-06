@@ -9,8 +9,11 @@
 
     <title>Boulevard - Sortable</title>
 
-    <link href="app.css" rel="stylesheet" type="text/css">
-    <link href="highlightjs/styles/solarized_dark.css" rel="stylesheet" type="text/css">
+    <!-- inject:css -->
+    <link rel="stylesheet" href="highlightjs/styles/solarized_dark.css">
+    <link rel="stylesheet" href="app.css">
+    <!-- endinject -->
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   </head>
@@ -23,15 +26,16 @@
 
     <app></app>
 
-    <script type="text/javascript" src="angular/angular.min.js"></script>
-    <script type="text/javascript" src="highlightjs/highlight.pack.min.js"></script>
-    <script type="text/javascript" src="sortable.js"></script>
-
-    <script type="text/javascript" src="app.js"></script>
-    <script type="text/javascript" src="components/app/app.js"></script>
-    <script type="text/javascript" src="components/todoList/todoList.js"></script>
-    <script type="text/javascript" src="directives/highlight.js"></script>
-    <script type="text/javascript" src="directives/replaceWith.js"></script>
+    <!-- inject:js -->
+    <script src="angular/angular.min.js"></script>
+    <script src="highlightjs/highlight.pack.min.js"></script>
+    <script src="sortable.js"></script>
+    <script src="app.js"></script>
+    <script src="directives/highlight.js"></script>
+    <script src="directives/replaceWith.js"></script>
+    <script src="components/app/app.js"></script>
+    <script src="components/todoList/todoList.js"></script>
+    <!-- endinject -->
 
   </body>
 </html>
