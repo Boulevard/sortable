@@ -1,5 +1,9 @@
 'use strict';
 
+var START_EVENT = 'ontouchstart' in document.documentElement ? 'touchstart' : 'mousedown';
+var MOVE_EVENT = 'ontouchmove' in document.documentElement ? 'touchmove' : 'mousemove';
+var END_EVENT = 'ontouchend' in document.documentElement ? 'touchend' : 'mouseup';
+
 function Sortable($attrs, $element, $scope) {
   var self = this;
 
@@ -105,19 +109,19 @@ function Sortable($attrs, $element, $scope) {
 
     selected = angular.element(event.currentTarget);
 
-    position.x = event.clientX;
-    position.y = event.clientY;
+    position.x = event.pageX;
+    position.y = event.pageY;
 
-    document.addEventListener('mousemove', mouseMove);
-    document.addEventListener('mouseup', mouseUp);
+    document.addEventListener(MOVE_EVENT, mouseMove);
+    document.addEventListener(END_EVENT, mouseUp);
   }
 
   function mouseMove(event) {
     event.preventDefault();
 
     var delta = {
-      x: event.clientX - position.x,
-      y: event.clientY - position.y
+      x: event.pageX - position.x,
+      y: event.pageY - position.y
     };
 
     if(magnitude(delta) < options.threshold) {
@@ -132,8 +136,8 @@ function Sortable($attrs, $element, $scope) {
   }
 
   function mouseUp(event) {
-    document.removeEventListener('mousemove', mouseMove);
-    document.removeEventListener('mouseup', mouseUp);
+    document.removeEventListener(MOVE_EVENT, mouseMove);
+    document.removeEventListener(END_EVENT, mouseUp);
 
     if(selected.hasClass('dragging')) {
       onDragEnd(event, selected, selected.children());
@@ -173,7 +177,7 @@ function Sortable($attrs, $element, $scope) {
   function onDragMove(event, child, delta) {
     child.css('transform', 'translate(' + delta.x + 'px, ' + delta.y+ 'px)');
 
-    var point = {x: event.clientX, y: event.clientY};
+    var point = {x: event.pageX, y: event.pageY};
     var sibling = getChildFromPoint(point);
 
     if(sibling && sibling !== dropzone[0]) {
@@ -233,7 +237,7 @@ function Sortable($attrs, $element, $scope) {
       var children = $element.children();
 
       if(self.sortable) {
-        children.on('mousedown', mouseDown);
+        children.on(START_EVENT, mouseDown);
       }
     }
   });
@@ -242,9 +246,9 @@ function Sortable($attrs, $element, $scope) {
     var children = $element.children();
 
     if(sortable) {
-      children.on('mousedown', mouseDown);
+      children.on(START_EVENT, mouseDown);
     } else {
-      children.off('mousedown', mouseDown);
+      children.off(START_EVENT, mouseDown);
     }
   });
 }

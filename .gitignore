@@ -8,3 +8,6 @@ app/app.css
 
 # hidden files
 .DS_STORE
+
+# hidden directories
+.publish

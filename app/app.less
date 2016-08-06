@@ -66,13 +66,15 @@ input {
   outline: none;
   font-size: 16px;
   box-shadow: 0 1px 0 @md-dark-divider;
+  border-radius: 0;
   font-weight: 300;
+  -webkit-appearance: none;
 
   &:focus {
-    box-shadow: 0 2px 0 @brand-primary;
+    box-shadow: 0 1px 0 @brand-primary;
 
     &.ng-dirty.ng-invalid {
-      box-shadow: 0 2px 0 @brand-danger;
+      box-shadow: 0 1px 0 @brand-danger;
     }
   }
 
@@ -96,6 +98,10 @@ button {
   font-family: inherit;
   border-radius: 2px;
   letter-spacing: 0.05em;
+
+  &:disabled {
+    cursor: default;
+  }
 
   &.primary {
     background-color: @brand-primary;

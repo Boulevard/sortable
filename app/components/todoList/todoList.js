@@ -24,7 +24,7 @@ TodoList.prototype.remove = function (item) {
 };
 
 TodoList.prototype.submit = function () {
-  if(this.form.$inValid) {
+  if(!this.todo || this.form.$inValid) {
     return;
   }
 

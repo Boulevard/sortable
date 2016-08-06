@@ -49,9 +49,15 @@ gulp.task('cleanCss', ['less'], function () {
 gulp.task('connect', function () {
   return plugins.connect.server({
     port: 3000,
+    host: '0.0.0.0',
     root: ['bower_components', 'src', 'app'],
     livereload: true
   });
+});
+
+gulp.task('deploy', ['build'], function () {
+  gulp.src('build/**/*')
+    .pipe(plugins.ghPages());
 });
 
 gulp.task('distribute', ['wrap'], function () {
