@@ -1,5 +1,5 @@
 {
-  "name": "angular-sortable",
+  "name": "blvd-sortable",
   "version": "0.0.2",
   "description": "Drag to reorder elements.",
   "license": "MIT",
@@ -18,15 +18,16 @@
     "sort",
     "sortable",
     "drag",
-    "reorder"
+    "reorder",
+    "boulevard",
+    "blvd"
   ],
   "ignore": [
     "**/.*",
     "app",
-    "bower_components",
-    "node_modules",
     "src",
-    "gulpfile.js"
+    "gulpfile.js",
+    "wrap.txt"
   ],
   "dependencies": {
     "angular": "^1.0.0"

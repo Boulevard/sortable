@@ -1,5 +1,5 @@
 {
-  "name": "angular-sortable",
+  "name": "blvd-sortable",
   "version": "0.0.2",
   "description": "Drag to reorder elements.",
   "license": "MIT",
@@ -13,6 +13,15 @@
     "url": "git://github.com/Boulevard/sortable.git"
   },
   "homepage": "http://Boulevard.github.io/sortable",
+  "keywords": [
+    "angular",
+    "sort",
+    "sortable",
+    "drag",
+    "reorder",
+    "boulevard",
+    "blvd"
+  ],
   "devDependencies": {
     "bower": "^1.7.9",
     "event-stream": "^3.3.4",
