@@ -28,6 +28,7 @@
     "src",
     "gulpfile.js",
     "index.js",
+    "package.json",
     "wrap.txt"
   ],
   "dependencies": {
