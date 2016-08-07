@@ -3,7 +3,7 @@
 Sortable is an AngularJS module for sorting an arbitrary set of UI elements by dragging them.
 
 * [License](#license)
-<!-- * [Demo](#demo) -->
+* [Demo](#demo)
 * [Installation](#installation)
 
 ## License
