@@ -22,6 +22,10 @@
     "boulevard",
     "blvd"
   ],
+  "files": [
+    "dist",
+    "index.js"
+  ],
   "devDependencies": {
     "bower": "^1.7.9",
     "event-stream": "^3.3.4",
