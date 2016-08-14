@@ -1,8 +1,8 @@
 /*
  * Sortable
- * git://github.com/Boulevard/sortable.git
+ * https://github.com/Boulevard/sortable.git
  * @license MIT
- * v0.0.2
+ * v0.0.3
  */
 
 (function (window, angular, undefined) {
@@ -250,7 +250,7 @@ function Sortable($attrs, $element, $scope) {
     }
   });
 
-  $scope.$watch('sortable', function (sortable) {
+  $scope.$watch('$sortable.sortable', function (sortable) {
     var children = $element.children();
 
     if(sortable) {

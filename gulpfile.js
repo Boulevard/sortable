@@ -28,11 +28,14 @@ gulp.task('build', ['uglify', 'cleanCss', 'dependencies'], function () {
 
   gulp.src('./app/index.html')
     .pipe(plugins.inject(orderedStream, {ignorePath: 'build', addRootSlash: false}))
+    .pipe(plugins.template(require('./package.json')))
     .pipe(gulp.dest('build'));
 });
 
 gulp.task('bump', function () {
   if(isValidType(options.bump)) {
+    delete require.cache[require.resolve('./package.json')];
+
     return gulp.src(['bower.json', 'package.json'])
       .pipe(plugins.bump({type: options.bump}))
       .pipe(gulp.dest('.'));

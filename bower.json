@@ -1,6 +1,6 @@
 {
   "name": "blvd-sortable",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Drag to reorder elements.",
   "license": "MIT",
   "authors": [
@@ -12,7 +12,7 @@
   "main": "dist/sortable.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Boulevard/sortable.git"
+    "url": "https://github.com/Boulevard/sortable.git"
   },
   "homepage": "http://Boulevard.github.io/sortable",
   "keywords": [

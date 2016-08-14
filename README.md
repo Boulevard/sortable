@@ -51,17 +51,21 @@ You may use Browserify to inject this module into your application.
 ```javascript
 angular.module('myApp', [require('sortable')]);
 ```
-#### Usage
+## Usage
 
 ```html
+<div>Rank your favorite junk food.</div>
+
 <ol sortable>
-  <li>One</li>
-  <li>two</li>
+  <li>Reeses Peanut Butter Cup</li>
+  <li>Hostess Twinkies</li>
+  <li>Ben & Jerry's Ice Cream</li>
 </ol>
 ```
-#### API Documentation
 
-**Attributes**
+## API Documentation
+
+#### Attributes
 
 | Attribute                              | Type         | Details |
 | :------------------------------------- | :----------- | :------ |
@@ -72,7 +76,7 @@ angular.module('myApp', [require('sortable')]);
 | `options`   <br> <sub>(optional)</sub> | `Object`     | Configurable options. (see below for details) |
 | `sortable`  <br>                       | `expression` | Will enable sorting if empty or evaluates to true. |
 
-**Callbacks**
+#### Callbacks
 
 `dragStart(element)`
 
@@ -95,10 +99,15 @@ angular.module('myApp', [require('sortable')]);
 | `oldIndex` | `Integer` | The old index of the element. |
 | `sequence` | `Array`   | A reference to the sequence. Requires `ngModel` |
 
-**Options** 
+#### Options 
 
 | Property    | Type      | Details |
 | :---------- | :-------- | :------ |
 | `dropzone`  | `String`  | Provide a template for the drop zone. By default an empty element with the same tag name as the element being dragged will be created. |
 | `sameSize`  | `Boolean` | Will make the dropzone the same size as the element being dragged. The default is `true` |
 | `threshold` | `Number`  | The magnitude, in pixels, the user must drag before initiating a drag. The default is `2` |
+
+#### Styling
+
+The element being dragged will have the `dragging` class.
+The drop zone will have the `drop-zone` class.
