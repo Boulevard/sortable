@@ -5,7 +5,7 @@ angular.module('blvd').directive('hljs', function () {
   function postLink(scope, element) {
 
     scope.$watch('code', function (code) {
-      element.html(hljs ? hljs.highlight(scope.lang, code).value : code);
+      element.html(hljs.highlight(scope.lang, code).value);
     });
   }
 

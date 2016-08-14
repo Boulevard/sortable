@@ -242,7 +242,7 @@ function Sortable($attrs, $element, $scope) {
     }
   });
 
-  $scope.$watch('sortable', function (sortable) {
+  $scope.$watch('$sortable.sortable', function (sortable) {
     var children = $element.children();
 
     if(sortable) {

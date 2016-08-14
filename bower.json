@@ -3,10 +3,12 @@
   "version": "0.0.2",
   "description": "Drag to reorder elements.",
   "license": "MIT",
-  "authors": [{
-    "name": "Daniel Nagy",
-    "email": "dan@boulevard.io"
-  }],
+  "authors": [
+    {
+      "name": "Daniel Nagy",
+      "email": "dan@boulevard.io"
+    }
+  ],
   "main": "dist/sortable.js",
   "repository": {
     "type": "git",
@@ -32,6 +34,7 @@
     "wrap.txt"
   ],
   "dependencies": {
-    "angular": "^1.0.0"
+    "angular": "^1.0.0",
+    "highlightjs": "^9.6.0"
   }
 }
