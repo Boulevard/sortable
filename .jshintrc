@@ -3,11 +3,11 @@
   "browser": true,
   "curly": true,
   "eqeqeq": true,
-  "es3": true,
+  "esversion": 6,
   "freeze": true,
   "globals": {
-    "hljs": false,
-    "angular": false
+    "angular": false,
+    "System": false
   },
   "indent": 2,
   "newcap": true,
@@ -16,7 +16,7 @@
   "noempty": true,
   "nonbsp": true,
   "quotmark": "single",
-  "strict": true,
+  "strict": false,
   "undef": true,
   "unused": true
 }

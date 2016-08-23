@@ -1,5 +1,5 @@
 /*
- * Sortable
+ * Calendar
  * <%= repository.url %>
  * @license <%= license %>
  * v<%= version %>

@@ -1,0 +1,6 @@
+// http://palantir.github.io/tslint/rules/
+{
+  "rules": {
+    "quotemark": [true, "single", "avoid-escape", "jsx-double"]
+  }
+}

@@ -1,35 +1,3 @@
 app {
   flex: 1 1 auto;
-  display: flex;
-  overflow-x: scroll;
-  align-items: flex-start;
-  -webkit-overflow-scrolling: touch;
-
-  .column {
-    flex: 0 1 50%;
-    display: flex;
-    padding: 16px;
-    justify-content: center;
-
-    &:nth-child(2) {
-      pre {
-        flex: 1 1 280px - 32px;
-        margin: 0;
-        padding: 16px;
-        font-size: 14px;
-        min-width: 280px - 32px;
-        max-width: 480px - 32px;
-        border-radius: 2px;
-      }
-    }
-  }
-
-  @media all and (max-width: 1024px) {
-    align-items: initial;
-    flex-direction: column;
-
-    .column {
-      flex: 0 0 auto;
-    }
-  }
 }
