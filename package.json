@@ -1,8 +1,8 @@
 {
-  "name": "blvd-calendar",
-  "version": "0.0.1",
-  "description": "Javascript calendar library.",
-  "license": "",
+  "name": "blvd-sortable",
+  "version": "0.0.3",
+  "description": "Drag to reorder elements.",
+  "license": "MIT",
   "author": {
     "name": "Daniel Nagy",
     "email": "dan@boulevard.io"
@@ -10,12 +10,15 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Boulevard/calendar.git"
+    "url": "https://github.com/Boulevard/sortable.git"
   },
-  "homepage": "http://Boulevard.github.io/calendar",
+  "homepage": "http://Boulevard.github.io/sortable",
   "keywords": [
     "angular",
-    "calendar",
+    "sort",
+    "sortable",
+    "drag",
+    "reorder",
     "boulevard",
     "blvd"
   ],
@@ -24,8 +27,6 @@
     "index.js"
   ],
   "devDependencies": {
-    "@types/angular": "^1.5.12",
-    "angular": "^1.5.8",
     "bower": "^1.7.9",
     "event-stream": "^3.3.4",
     "gulp": "^3.9.1",
@@ -40,18 +41,18 @@
     "gulp-jshint": "^2.0.1",
     "gulp-less": "^3.1.0",
     "gulp-load-plugins": "^1.2.4",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-ng-html2js": "^0.2.2",
     "gulp-replace": "^0.5.4",
     "gulp-template": "^4.0.0",
-    "gulp-tslint": "^6.1.1",
     "gulp-uglify": "^2.0.0",
     "gulp-wrap": "^0.13.0",
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.2.0",
     "minimist": "^1.2.0",
-    "react": "^15.3.1",
-    "stream-series": "^0.1.1",
-    "systemjs": "^0.19.36",
-    "tslint": "^3.15.1",
-    "typescript": "^2.0.0"
+    "stream-series": "^0.1.1"
+  },
+  "peerDependencies": {
+    "angular": "^1.0.0"
   }
 }

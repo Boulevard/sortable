@@ -1,4 +1,4 @@
 require('angular');
-require('./dist/calendar');
+require('./dist/sortable');
 
 module.exports = 'sortable';

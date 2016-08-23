@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="blvd">
 
   <head>
 
@@ -7,10 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Boulevard - Scheduler</title>
+    <title>Boulevard - Sortable</title>
 
+    <!-- inject:css -->
+    <link rel="stylesheet" href="highlightjs/styles/solarized_dark.css">
     <link rel="stylesheet" href="app.css">
-    <link rel="stylesheet" href="src/scheduler.css">
+    <!-- endinject -->
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -19,26 +21,28 @@
   <body>
 
     <div class="navbar">
-      <div replace-with="images/logo.svg"></div>
+     <div replace-with="'images/logo.svg'"></div>
     </div>
 
     <app></app>
 
     <div class="footer">
-      <div>Calendar</div>
-      <!-- <div>v<%= version %></div> -->
-      <!-- <a href="<%= repository.url %>" target="_blank">GitHub</a> -->
+      <div>Sortable</div>
+      <div>v<%= version %></div>
+      <a href="<%= repository.url %>" target="_blank">GitHub</a>
     </div>
 
-    <!-- <script src="node_modules/es6-promise/dist/es6-promise.min.js"></script> -->
-    <script src="node_modules/systemjs/dist/system.js"></script>
-    <script src="systemjs.config.js"></script>
-
-    <script>
-      System.import('app/main').catch(function (error) {
-        console.error(error);
-      });
-    </script>
+    <!-- inject:js -->
+    <script src="angular/angular.min.js"></script>
+    <script src="highlightjs/highlight.pack.min.js"></script>
+    <script src="sortable.js"></script>
+    <script src="app.js"></script>
+    <script src="directives/highlight.js"></script>
+    <script src="directives/ngTouchDirs.js"></script>
+    <script src="directives/replaceWith.js"></script>
+    <script src="components/todoList/todoList.js"></script>
+    <script src="components/app/app.js"></script>
+    <!-- endinject -->
 
   </body>
 </html>
