@@ -38,7 +38,7 @@ Include the `sortable` module as a dependency in your application.
 angular.module('myApp', ['sortable']);
 ```
 
-#### Using npm and Browserify (or JSPM)
+#### Using npm and a Module Bundler (webpack or Browserify or jspm)
 
 In addition, this package may be installed using npm.
 
@@ -49,9 +49,12 @@ npm install blvd-sortable --save
 You may use Browserify to inject this module into your application.
 
 ```javascript
-angular.module('myApp', [require('sortable')]);
+angular.module('myApp', [require('blvd-sortable')]);
 ```
 ## Usage
+
+
+#### Basic Usage
 
 ```html
 <div>Rank your favorite junk food.</div>
@@ -63,7 +66,39 @@ angular.module('myApp', [require('sortable')]);
 </ol>
 ```
 
+#### Responding to drag events
+
+```javascript
+class SortableController {
+  canSort = true;
+
+  onDragStart = (element) => {
+    ...
+  }
+  
+  onDragMove = (element) => {
+    ...
+  }
+
+  onDragEnd = (element, newIndex, oldIndex, sequence) => {
+    ...
+  }
+}
+```
+
+```html
+<div>Rank your favorite junk food.</div>
+
+<ol sortable="$ctrl.canSort" drag-start="$ctrl.onDragStart" drag-move="$ctrl.onDragMove" drag-end="$ctrl.onDragEnd">
+  <li>Reeses Peanut Butter Cup</li>
+  <li>Hostess Twinkies</li>
+  <li>Ben & Jerry's Ice Cream</li>
+</ol>
+```
+
 ## API Documentation
+
+> Don't forget to kebab-case attributes in your template (e.g. `dragEnd` should be written `drag-end` in your template).
 
 #### Attributes
 

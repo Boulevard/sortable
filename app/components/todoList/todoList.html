@@ -12,7 +12,7 @@
 </form>
 
 <table>
-  <tbody class="items" sortable ng-model="$ctrl.todos" options="$ctrl.options">
+  <tbody class="items" sortable ng-model="$ctrl.todos" options="$ctrl.options" drag-end="$ctrl.onDragEnd">
     <tr class="item" ng-repeat="todo in $ctrl.todos">
       <td class="number" ng-mousedown="$ctrl.preventDrag($event)" ng-touchstart="$ctrl.preventDrag($event)">{{$index + 1}}.</td>
       <td class="label" ng-mousedown="$ctrl.preventDrag($event)" ng-touchstart="$ctrl.preventDrag($event)">{{todo}}</td>
