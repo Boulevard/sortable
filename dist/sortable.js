@@ -2,7 +2,7 @@
  * Sortable
  * https://github.com/Boulevard/sortable.git
  * @license MIT
- * v0.0.3
+ * v0.1.0
  */
 
 (function (window, angular, undefined) {
@@ -85,7 +85,7 @@ function Sortable($attrs, $element, $scope) {
       height: computedStyle.height,
       left: bounds.left - computedStyle.marginLeft.slice(0, -2) + 'px',
       pointerEvents: 'none',
-      position: 'absolute',
+      position: 'fixed',
       top: bounds.top - computedStyle.marginTop.slice(0, -2) + 'px',
       width: computedStyle.width,
       zIndex: 100

@@ -77,7 +77,7 @@ function Sortable($attrs, $element, $scope) {
       height: computedStyle.height,
       left: bounds.left - computedStyle.marginLeft.slice(0, -2) + 'px',
       pointerEvents: 'none',
-      position: 'absolute',
+      position: 'fixed',
       top: bounds.top - computedStyle.marginTop.slice(0, -2) + 'px',
       width: computedStyle.width,
       zIndex: 100

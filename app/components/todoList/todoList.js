@@ -37,7 +37,7 @@ TodoList.prototype.preventDrag = function (event) {
   event.stopPropagation();
 };
 
-TodoList.prototype.onDragEnd = function (element, newIndex, oldIndex, [sequence]) {
+TodoList.prototype.onDragEnd = function (element, newIndex, oldIndex, sequence) {
   console.log(element, newIndex, oldIndex, sequence);
 };
 

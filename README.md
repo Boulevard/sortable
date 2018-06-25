@@ -6,6 +6,7 @@ Sortable is an AngularJS module for sorting an arbitrary set of UI elements by d
 * [Demo](#demo)
 * [Installation](#installation)
 * [Usage](#usage)
+* [Caveats](#caveats)
 * [API Documentation](api-documentation)
 
 ## License
@@ -94,6 +95,22 @@ class SortableController {
   <li>Hostess Twinkies</li>
   <li>Ben & Jerry's Ice Cream</li>
 </ol>
+```
+
+## Caveats
+
+Fixed elements are normally positioned relative to the initial containing block established by the viewport; however, when an ancestor of the element has a `transform`, `perspective`, or `filter` property it becomes the containing element. This complicates computing the position of the element being dragged. One solution may be to move the element being dragged to the document body, but that could conflict with computed css styles. For now I would recommend adding the following `dragStart` callback to manually correct the element's position.
+
+```javascript
+function onDragStart(element) {
+  // obtain the culprit element
+  var transformedElement = document.querySelector('[style="transform: ..."]');
+  var bounds = transformedElement.getBoundingClientRect();
+
+  // correct the element's position
+  element.css('left', element.css('left').slice(0, -2) - bounds.left + 'px');
+  element.css('top', element.css('top').slice(0, -2) - bounds.top + 'px');
+}
 ```
 
 ## API Documentation
